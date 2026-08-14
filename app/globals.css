@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* ---- Axion Fit design tokens ---- */
+:root {
+  --af-bg: #15181a;          /* base — graphite, not pure black */
+  --af-surface: #1e2225;     /* card surface */
+  --af-surface-2: #262b2e;   /* raised surface */
+  --af-line: #33393c;        /* hairline */
+  --af-text: #eeeee6;        /* off-white body text */
+  --af-text-dim: #9aa0a0;    /* secondary text */
+  --af-protein: #ff8a3d;     /* amber — protein */
+  --af-carb: #5ec8d8;        /* steel cyan — carbs */
+  --af-fat: #d8c15e;         /* muted gold — fat */
+  --af-signal: #ff8a3d;      /* primary accent = protein amber */
+}
+
+@theme inline {
+  --color-bg: var(--af-bg);
+  --color-surface: var(--af-surface);
+  --color-surface-2: var(--af-surface-2);
+  --color-line: var(--af-line);
+  --color-text: var(--af-text);
+  --color-text-dim: var(--af-text-dim);
+  --color-protein: var(--af-protein);
+  --color-carb: var(--af-carb);
+  --color-fat: var(--af-fat);
+  --color-signal: var(--af-signal);
+  --font-display: "Noto Sans TC", sans-serif;
+  --font-body: "Noto Sans TC", sans-serif;
+  --font-data: "JetBrains Mono", monospace;
+}
+
+* {
+  border-color: var(--af-line);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--af-bg);
+  color: var(--af-text);
+  font-family: "Noto Sans TC", system-ui, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: "Noto Sans TC", sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.font-data {
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* macro bar — the recurring signature motif: a segmented P/C/F bar
+   used both as the hero visual and as a decorative rule/divider */
+.macro-bar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--af-surface-2);
+}
+.macro-bar > span { display: block; height: 100%; }
+.macro-bar .p { background: var(--af-protein); }
+.macro-bar .c { background: var(--af-carb); }
+.macro-bar .f { background: var(--af-fat); }
+
+.macro-rule {
+  height: 3px;
+  width: 64px;
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+}
+.macro-rule .p { background: var(--af-protein); flex: 4; }
+.macro-rule .c { background: var(--af-carb); flex: 4; }
+.macro-rule .f { background: var(--af-fat); flex: 2; }
+
+::selection {
+  background: var(--af-signal);
+  color: #15181a;
+}
+
+:focus-visible {
+  outline: 2px solid var(--af-signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
