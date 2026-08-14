@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  allowedDevHosts: [".replit.dev", ".repl.co", ".replit.app"],
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
