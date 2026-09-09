@@ -13,6 +13,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="zh-Hant" className="h-full antialiased">
       <head>
+        <meta
+          name="google-site-verification"
+          content="XuoESv-QCK9PVoqq2_Iq_TuyyEOe0VckQdTOKx1_WiQ"
+        />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3444266047832513" crossOrigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
