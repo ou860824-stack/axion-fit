@@ -9,6 +9,7 @@ export type Post = {
   readMins: number;
   macro: MacroSplit;
   body: string[]; // paragraphs
+  related?: string[]; // related post slugs
 };
 
 export type Product = {
@@ -40,6 +41,7 @@ export const posts: Post[] = [
       "5. 毛豆——超商的即食毛豆一份約 11 克蛋白質,而且纖維含量高,飽足感比想像中好。",
       "把這幾樣搭配著吃,一天要湊到 100 克以上蛋白質其實沒有想像中難。如果懶得每次查營養標示手動加總,用試算表把常吃的品項建成資料庫,選一次就自動算出當天總量,會省下很多時間。",
     ],
+    related: ["5-signs-youre-undereating-protein", "whey-protein-buying-guide", "beginner-diet-mistakes-first-month"],
   },
   {
     slug: "macro-counting-myths",
@@ -55,6 +57,7 @@ export const posts: Post[] = [
       "迷思三:「算出來的數字要每天分毫不差」。巨量營養素抓的是「範圍」,不是「精準到公克的宗教儀式」。上下 5 克左右的誤差完全不影響長期結果,重點是每週平均值有沒有落在目標區間內,而不是單日有沒有超標 2 克蛋白質。",
       "與其糾結單日數字,不如把追蹤的重心放在建立「這個食物大概是多少」的直覺,搭配每週一次的體重與圍度紀錄來校正目標,才是能長期執行下去的做法。",
     ],
+    related: ["how-to-calculate-your-macros", "3-fat-loss-myths-beginners-fall-for", "beginner-diet-mistakes-first-month"],
   },
   {
     slug: "how-to-calculate-your-macros",
@@ -72,6 +75,7 @@ export const posts: Post[] = [
       "第五步,換算成公克數。蛋白質與碳水化合物每克 4 大卡,脂肪每克 9 大卡,用總熱量分別除回去就是每日公克目標。",
       "這五步手算一次大概要 10-15 分鐘,而且體重變化時就要重算一次。如果懶得每次重新推公式,建立一份試算表把公式寫死,之後只要改體重跟活動量兩個欄位,目標就會自動更新。",
     ],
+    related: ["macro-counting-myths", "beginner-diet-mistakes-first-month", "carbs-training-day-vs-rest-day"],
   },
   {
     slug: "5-signs-youre-undereating-protein",
@@ -89,6 +93,7 @@ export const posts: Post[] = [
       "5. 感冒或小傷口好得比平常慢——免疫細胞與傷口修復同樣需要蛋白質參與。",
       "如果這幾個訊號中了兩三個,先別急著加訓練量,回頭檢查一下每天蛋白質總量有沒有達標,通常是更直接有效的調整方向。",
     ],
+    related: ["5-high-protein-taiwan-convenience-store", "whey-protein-buying-guide", "bulking-calorie-surplus-guide"],
   },
   {
     slug: "5-underrated-high-fiber-foods",
@@ -107,6 +112,7 @@ export const posts: Post[] = [
       "5. 蘋果連皮吃——一顆中型蘋果約 4 克纖維,其中很大一部分在果皮,削皮吃等於少掉不少纖維。",
       "把這幾樣輪流加進三餐,不用刻意計算,飽足感自然會比同樣熱量、但纖維量低的組合來得持久。",
     ],
+    related: ["lunch-box-fat-loss-guide", "fat-loss-plateau-reasons", "3-fat-loss-myths-beginners-fall-for"],
   },
   {
     slug: "3-fat-loss-myths-beginners-fall-for",
@@ -122,6 +128,7 @@ export const posts: Post[] = [
       "迷思三:「只要體重機數字往下掉,就代表減脂成功」。體重會受水分、鹽分攝取、女性生理週期等因素影響,單日甚至單週的體重波動不能直接等於脂肪量變化。搭配圍度紀錄或每兩週一次的身體組成量測,才能看出真正的趨勢。",
       "這三個迷思的共通點是:都把「感覺上合理」當成「生理上正確」。減脂真正的槓桿只有兩個——長期的熱量赤字,和足夠支撐肌肉量的蛋白質攝取,其他大部分細節的影響都遠比想像中小。",
     ],
+    related: ["beginner-diet-mistakes-first-month", "fat-loss-plateau-reasons", "macro-counting-myths"],
   },
   {
     slug: "carbs-training-day-vs-rest-day",
@@ -138,6 +145,7 @@ export const posts: Post[] = [
       "如果訓練時段是重量訓練或高強度間歇,這樣的調整對訓練表現的差異會比純有氧或低強度活動更明顯——因為醣類是這類訓練的主要燃料來源,肝醣存量不足時,力量輸出跟組數撐不住的情況會更快出現。",
       "如果懶得每天手動重算,可以直接設定兩組目標(訓練日 / 休息日),在追蹤表裡切換使用,不用每次都重新推公式。",
     ],
+    related: ["bulking-calorie-surplus-guide", "how-to-calculate-your-macros", "intermittent-fasting-taiwan"],
   },
   {
     slug: "bubble-tea-calories-ranking",
@@ -155,6 +163,7 @@ export const posts: Post[] = [
       "如果真的想喝奶類飲品,可以選「鮮奶+甜度減半或微糖」,並跳過珍珠、布丁、椰果這類額外加糖的配料,熱量通常可以壓在 150-200 大卡之間,對減脂期來說是可以接受的範圍。",
       "與其完全戒手搖飲,不如把它算進當天的碳水或熱量預算裡——關鍵是知道自己喝下去的到底是多少,而不是憑感覺猜。把常喝的品項建進食物資料庫,喝之前先看一眼熱量,長期下來的差異會很明顯。",
     ],
+    related: ["lunch-box-fat-loss-guide", "5-high-protein-taiwan-convenience-store", "fat-loss-plateau-reasons"],
   },
   {
     slug: "lunch-box-fat-loss-guide",
@@ -172,6 +181,7 @@ export const posts: Post[] = [
       "第四個原則:湯留意「勾芡」跟「大骨湯」。清湯類熱量通常不高,勾芡湯品或濃湯類會額外增加不少澱粉與油脂,對熱量預算是隱藏的加項。",
       "如果每天中午都吃便當,建議先固定 2-3 家常去的店,把主菜跟配菜的熱量估值建成自己的資料庫,之後點餐前心裡先有數,而不是吃完才回頭猜今天吃了多少。",
     ],
+    related: ["bubble-tea-calories-ranking", "5-underrated-high-fiber-foods", "fat-loss-plateau-reasons"],
   },
   {
     slug: "fat-loss-plateau-reasons",
@@ -189,6 +199,7 @@ export const posts: Post[] = [
       "原因五:睡眠與壓力影響了整體代謝與食慾調控。長期睡眠不足或壓力過大會提高皮質醇,進而影響飢餓感與水分滯留,讓體重數字看起來停滯,即使脂肪其實仍在緩慢下降。",
       "遇到停滯期,建議先看 2-3 週的體重與圍度平均趨勢,而不是單日數字,同時回頭檢查飲食記錄有沒有低估的地方,再決定要不要調整熱量目標。",
     ],
+    related: ["3-fat-loss-myths-beginners-fall-for", "weight-vs-body-fat-explained", "intermittent-fasting-taiwan"],
   },
   {
     slug: "bulking-calorie-surplus-guide",
@@ -206,6 +217,7 @@ export const posts: Post[] = [
       "判斷盈餘幅度對不對,不要只看體重機,建議搭配每 2 週一次的體圍紀錄(腰圍、手臂圍)與訓練表現(重量、次數有沒有進步)。如果體重漲得快但腰圍也跟著明顯變大、訓練表現卻沒進步,通常代表盈餘抓太多了,該往下調。",
       "增肌是一個需要耐心的過程,建議設定至少 8-12 週為一個週期,搭配追蹤表記錄體重、圍度與訓練數據的趨勢,才能清楚判斷該不該調整熱量,而不是憑感覺猜。",
     ],
+    related: ["carbs-training-day-vs-rest-day", "5-signs-youre-undereating-protein", "whey-protein-buying-guide"],
   },
   {
     slug: "intermittent-fasting-taiwan",
@@ -223,6 +235,7 @@ export const posts: Post[] = [
       "適合斷食的情況:平常工作忙、早餐容易隨便吃或懶得吃、喜歡把熱量集中在晚餐吃到飽足感的人。不適合的情況:需要早上訓練且訓練前需要進食才有力氣的人、有血糖問題或病史需要少量多餐的人,這類情況建議先諮詢醫師或營養師。",
       "如果想嘗試,建議從 12:12 開始,慢慢拉長到 14:10、16:8,不用一開始就硬上,同時把進食窗口內的熱量跟巨量營養素照樣算好,斷食只是換了個吃飯的時間安排,不是省略計算這一步。",
     ],
+    related: ["fat-loss-plateau-reasons", "beginner-diet-mistakes-first-month", "weight-vs-body-fat-explained"],
   },
   {
     slug: "whey-protein-buying-guide",
@@ -240,6 +253,7 @@ export const posts: Post[] = [
       "口味跟溶解度也值得考慮,尤其是需要長期喝的產品——如果因為口感不喜歡而斷斷續續沒喝完,再高純度的乳清也發揮不了作用。建議先買小包裝試喝,確認能接受再囤大包裝比較划算。",
       "乳清終究是「補充」用的工具,不是取代天然食物蛋白質的必需品。如果三餐已經能吃到足量的雞蛋、豆製品、肉類與乳製品,乳清可以是方便的補充選項,而不是非喝不可的東西。",
     ],
+    related: ["5-high-protein-taiwan-convenience-store", "5-signs-youre-undereating-protein", "bulking-calorie-surplus-guide"],
   },
   {
     slug: "weight-vs-body-fat-explained",
@@ -256,6 +270,7 @@ export const posts: Post[] = [
       "建議的做法是體重每週固定 2-3 個早上量測、取平均值來看趨勢,而不是每天盯著單一數字焦慮;同時每 2-4 週量一次腰圍跟拍一次對照照片,長期下來會比單看體重機更能反映真實進度。",
       "如果連續 3-4 週體重、腰圍、體脂率都完全沒有變化,才需要認真檢視是不是熱量赤字被代謝適應吃掉了;如果只是體重卡住但其他指標都在往好的方向走,通常代表方向是對的,不需要急著大幅調整。",
     ],
+    related: ["fat-loss-plateau-reasons", "3-fat-loss-myths-beginners-fall-for", "intermittent-fasting-taiwan"],
   },
   {
     slug: "beginner-diet-mistakes-first-month",
@@ -273,6 +288,7 @@ export const posts: Post[] = [
       "錯誤五:沒有記錄,全靠感覺判斷「有沒有在進步」。沒有數字對照,很難判斷目前的飲食安排到底有沒有效果,也容易在體重卡住時病急亂投醫,今天聽這個方法、明天換那套菜單。",
       "建議從第一天訓練開始,就用一份簡單的追蹤表記錄體重、熱量與蛋白質攝取,哪怕一開始估算不夠精準也沒關係,重點是建立起「有數字可以回頭檢視」的習慣,這比任何一套飲食法本身都更能決定新手期間的進步速度。",
     ],
+    related: ["how-to-calculate-your-macros", "macro-counting-myths", "3-fat-loss-myths-beginners-fall-for"],
   },
 ];
 

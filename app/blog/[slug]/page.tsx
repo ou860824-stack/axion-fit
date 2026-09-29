@@ -81,6 +81,34 @@ export default async function BlogPost({
           查看詳情 · {product.price}
         </Link>
       </div>
+
+      {/* Related posts — internal linking for SEO + reader retention */}
+      {post.related && post.related.length > 0 && (
+        <div className="mt-10">
+          <p className="font-data text-xs uppercase tracking-widest text-signal mb-4">
+            延伸閱讀
+          </p>
+          <div className="space-y-4">
+            {post.related
+              .map((slug) => getPost(slug))
+              .filter((p): p is NonNullable<typeof p> => Boolean(p))
+              .map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="block rounded-sm border border-line bg-surface p-4 hover:border-signal transition-colors"
+                >
+                  <p className="font-data text-xs uppercase tracking-wide text-text-dim mb-1">
+                    {related.category}
+                  </p>
+                  <p className="font-display font-bold text-text">
+                    {related.title}
+                  </p>
+                </Link>
+              ))}
+          </div>
+        </div>
+      )}
     </article>
   );
 }
