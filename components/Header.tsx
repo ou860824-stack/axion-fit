@@ -13,6 +13,9 @@ export default function Header() {
           <Link href="/blog" className="hover:text-text transition-colors">
             文章
           </Link>
+          <Link href="/calculator" className="hover:text-text transition-colors">
+            計算機
+          </Link>
           <Link href="/products" className="hover:text-text transition-colors">
             工具
           </Link>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import MacroBar from "@/components/MacroBar";
 import AdSlot from "@/components/AdSlot";
+import EmailCapture from "@/components/EmailCapture";
 import { posts, products, getPost } from "@/lib/content";
 
 export function generateStaticParams() {
@@ -81,6 +82,8 @@ export default async function BlogPost({
           查看詳情 · {product.price}
         </Link>
       </div>
+
+      <EmailCapture source="blog" />
 
       {/* Related posts — internal linking for SEO + reader retention */}
       {post.related && post.related.length > 0 && (

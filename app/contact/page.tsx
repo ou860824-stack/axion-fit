@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description: "有問題、合作邀約或內容勘誤,歡迎與 Axion Fit 聯繫。",
 };
 
-const CONTACT_EMAIL = "ai.resource.center@outlook.com";
+const CONTACT_EMAIL = "axion.fit@outlook.com";
 
 export default function ContactPage() {
   return (
