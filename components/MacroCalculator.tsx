@@ -258,7 +258,7 @@ export default function MacroCalculator() {
       )}
 
       <div id="get-menu" className="mt-8 scroll-mt-24">
-        <EmailCapture source="calculator" />
+        <EmailCapture />
       </div>
     </div>
   );

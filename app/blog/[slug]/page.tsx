@@ -83,7 +83,7 @@ export default async function BlogPost({
         </Link>
       </div>
 
-      <EmailCapture source="blog" />
+      <EmailCapture />
 
       {/* Related posts — internal linking for SEO + reader retention */}
       {post.related && post.related.length > 0 && (
