@@ -60,7 +60,7 @@ export default function EmailCapture({
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <p style={styles.title}>算出來了，然後要吃什麼？</p>
+          <p style={styles.title}>不知道每天要吃什麼？</p>
           <p style={styles.text}>
             留下 Email，免費拿「7 天高蛋白菜單」— 超商、外食都能照著吃。
           </p>
