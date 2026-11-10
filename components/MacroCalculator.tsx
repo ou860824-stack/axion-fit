@@ -194,71 +194,72 @@ export default function MacroCalculator() {
       </form>
 
       {result && (
-        <>
-          <section
-            aria-live="polite"
-            className="mt-8 rounded-sm border border-line bg-surface p-6 sm:p-8"
-          >
-            <p className="font-data text-xs uppercase tracking-widest text-signal">
-              Your daily targets
-            </p>
-            <h2 className="mt-2 font-display text-2xl font-bold">
-              每日建議攝取目標
-            </h2>
-            <p className="mt-5 font-data text-4xl font-bold text-signal">
-              {result.calories.toLocaleString()}{" "}
-              <span className="text-base font-normal text-text-dim">KCAL</span>
-            </p>
+        <section
+          aria-live="polite"
+          className="mt-8 rounded-sm border border-line bg-surface p-6 sm:p-8"
+        >
+          <p className="font-data text-xs uppercase tracking-widest text-signal">
+            Your daily targets
+          </p>
+          <h2 className="mt-2 font-display text-2xl font-bold">
+            每日建議攝取目標
+          </h2>
+          <p className="mt-5 font-data text-4xl font-bold text-signal">
+            {result.calories.toLocaleString()}{" "}
+            <span className="text-base font-normal text-text-dim">KCAL</span>
+          </p>
 
-            <dl className="mt-6 grid grid-cols-2 gap-4 border-y border-line py-4 text-sm sm:grid-cols-3">
-              <div>
-                <dt className="text-text-dim">基礎代謝率（BMR）</dt>
-                <dd className="mt-1 font-data text-lg text-text">
-                  {result.bmr.toLocaleString()} kcal
-                </dd>
-              </div>
-              <div>
-                <dt className="text-text-dim">每日總消耗（TDEE）</dt>
-                <dd className="mt-1 font-data text-lg text-text">
-                  {result.tdee.toLocaleString()} kcal
-                </dd>
-              </div>
-              <div className="col-span-2 sm:col-span-1">
-                <dt className="text-text-dim">蛋白質建議值</dt>
-                <dd className="mt-1 font-data text-lg text-protein">
-                  1.8 g / kg
-                </dd>
-              </div>
-            </dl>
+          <dl className="mt-6 grid grid-cols-2 gap-4 border-y border-line py-4 text-sm sm:grid-cols-3">
+            <div>
+              <dt className="text-text-dim">基礎代謝率（BMR）</dt>
+              <dd className="mt-1 font-data text-lg text-text">
+                {result.bmr.toLocaleString()} kcal
+              </dd>
+            </div>
+            <div>
+              <dt className="text-text-dim">每日總消耗（TDEE）</dt>
+              <dd className="mt-1 font-data text-lg text-text">
+                {result.tdee.toLocaleString()} kcal
+              </dd>
+            </div>
+            <div className="col-span-2 sm:col-span-1">
+              <dt className="text-text-dim">蛋白質建議值</dt>
+              <dd className="mt-1 font-data text-lg text-protein">
+                1.8 g / kg
+              </dd>
+            </div>
+          </dl>
 
-            <MacroBar macro={result.macroSplit} labeled className="mt-6" />
-            <dl className="mt-5 grid grid-cols-3 gap-3 text-center">
-              <div>
-                <dt className="text-sm text-text-dim">蛋白質</dt>
-                <dd className="mt-1 font-data text-2xl text-protein">
-                  {result.protein}g
-                </dd>
-              </div>
-              <div>
-                <dt className="text-sm text-text-dim">碳水</dt>
-                <dd className="mt-1 font-data text-2xl text-carb">
-                  {result.carbs}g
-                </dd>
-              </div>
-              <div>
-                <dt className="text-sm text-text-dim">脂肪</dt>
-                <dd className="mt-1 font-data text-2xl text-fat">
-                  {result.fat}g
-                </dd>
-              </div>
-            </dl>
-            <p className="mt-6 border-t border-line pt-4 text-xs leading-relaxed text-text-dim">
-              這是以 Mifflin-St Jeor 公式估算的參考值，實際需求會因個人狀況而異。請觀察數週的體重與身體狀況，再逐步調整；本工具不取代醫療或營養專業建議。
-            </p>
-          </section>
-          <EmailCapture source="calculator" />
-        </>
+          <MacroBar macro={result.macroSplit} labeled className="mt-6" />
+          <dl className="mt-5 grid grid-cols-3 gap-3 text-center">
+            <div>
+              <dt className="text-sm text-text-dim">蛋白質</dt>
+              <dd className="mt-1 font-data text-2xl text-protein">
+                {result.protein}g
+              </dd>
+            </div>
+            <div>
+              <dt className="text-sm text-text-dim">碳水</dt>
+              <dd className="mt-1 font-data text-2xl text-carb">
+                {result.carbs}g
+              </dd>
+            </div>
+            <div>
+              <dt className="text-sm text-text-dim">脂肪</dt>
+              <dd className="mt-1 font-data text-2xl text-fat">
+                {result.fat}g
+              </dd>
+            </div>
+          </dl>
+          <p className="mt-6 border-t border-line pt-4 text-xs leading-relaxed text-text-dim">
+            這是以 Mifflin-St Jeor 公式估算的參考值，實際需求會因個人狀況而異。請觀察數週的體重與身體狀況，再逐步調整；本工具不取代醫療或營養專業建議。
+          </p>
+        </section>
       )}
+
+      <div id="get-menu" className="mt-8 scroll-mt-24">
+        <EmailCapture source="calculator" />
+      </div>
     </div>
   );
 }

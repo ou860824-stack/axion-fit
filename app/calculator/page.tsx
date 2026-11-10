@@ -19,6 +19,12 @@ export default function CalculatorPage() {
       <p className="mt-4 max-w-2xl leading-relaxed text-text-dim">
         根據你的基本資料與目標，估算每日熱量和蛋白質、碳水、脂肪攝取量。結果僅供參考，可依數週的實際變化調整。
       </p>
+      <a
+        href="#get-menu"
+        className="mt-4 inline-flex text-sm text-signal underline-offset-4 hover:text-signal-hover hover:underline"
+      >
+        只想領 7 天高蛋白菜單？直接往下 ↓
+      </a>
       <div className="mt-8">
         <MacroCalculator />
       </div>
