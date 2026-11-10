@@ -88,8 +88,9 @@ export default function EmailCapture({
 
 const styles: Record<string, React.CSSProperties> = {
   box: {
-    background: "#111827",
+    background: "#1E2227",
     color: "#F9FAFB",
+    border: "1px solid #2E333A",
     borderRadius: 16,
     padding: "24px 20px",
     margin: "32px 0",
@@ -103,8 +104,8 @@ const styles: Record<string, React.CSSProperties> = {
     maxWidth: 320,
     padding: "12px 14px",
     borderRadius: 10,
-    border: "1px solid #374151",
-    background: "#1F2937",
+    border: "1px solid #2E333A",
+    background: "#15181C",
     color: "#F9FAFB",
     fontSize: 16,
   },
@@ -113,8 +114,8 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "12px 20px",
     borderRadius: 10,
     border: "none",
-    background: "#22C55E",
-    color: "#052E16",
+    background: "var(--af-signal)",
+    color: "#15181C",
     fontWeight: 700,
     fontSize: 16,
     cursor: "pointer",
