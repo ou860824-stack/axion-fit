@@ -112,6 +112,15 @@ export default async function BlogPost({
           </div>
         </div>
       )}
+
+      <div className="mt-6 border-t border-line pt-4">
+        <a
+          href="https://axionfit.gumroad.com/l/12week?utm_source=blog"
+          className="text-sm text-signal transition-colors hover:text-signal-hover"
+        >
+          想照著吃、照著追蹤？12 週減脂計畫表 US$15 →
+        </a>
+      </div>
     </article>
   );
 }

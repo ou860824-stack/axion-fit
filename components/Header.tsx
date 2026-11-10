@@ -74,13 +74,13 @@ export default function Header() {
           >
             關於
           </Link>
-          <Link
-            href="/products/macro-tracker"
+          <a
+            href="https://axionfit.gumroad.com/l/12week?utm_source=website_nav"
             className="mt-2 inline-flex w-full justify-center whitespace-nowrap rounded-sm bg-signal px-3 py-2 text-brand-ink normal-case tracking-normal transition-colors hover:bg-signal-hover md:mt-0 md:w-auto md:py-1.5"
             onClick={() => setIsMenuOpen(false)}
           >
             立即取得
-          </Link>
+          </a>
         </nav>
       </div>
     </header>

@@ -20,6 +20,19 @@ export default function ProductsIndex() {
       </p>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <article className="rounded-sm border border-line bg-surface p-6 transition-colors hover:border-signal-hover">
+          <h2 className="font-display text-xl font-bold">12 週減脂計畫表</h2>
+          <p className="mt-2 text-sm text-text-dim">
+            填數字自動算熱量、追蹤 12 週體重、停滯期自動提醒、附 28 天外食菜單
+          </p>
+          <p className="font-data mt-4 text-signal">US$15</p>
+          <a
+            href="https://axionfit.gumroad.com/l/12week?utm_source=website_tools"
+            className="mt-4 inline-flex rounded-sm bg-signal px-4 py-2 text-sm font-medium text-brand-ink transition-colors hover:bg-signal-hover"
+          >
+            立即取得 →
+          </a>
+        </article>
         {products.map((product) => (
           <Link
             key={product.slug}
