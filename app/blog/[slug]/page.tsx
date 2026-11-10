@@ -40,7 +40,7 @@ export default async function BlogPost({
     <article className="mx-auto max-w-2xl px-5 py-16">
       <Link
         href="/blog"
-        className="font-data text-xs uppercase tracking-wide text-text-dim hover:text-signal transition-colors"
+        className="font-data text-xs uppercase tracking-wide text-text-dim transition-colors hover:text-signal-hover"
       >
         ← 回文章列表
       </Link>
@@ -77,7 +77,7 @@ export default async function BlogPost({
         <p className="mt-2 text-sm text-text-dim">{product.tagline}</p>
         <Link
           href={`/products/${product.slug}`}
-          className="mt-4 inline-block rounded-sm bg-signal px-4 py-2 text-sm font-medium text-bg hover:opacity-90 transition-opacity"
+          className="mt-4 inline-block rounded-sm bg-signal px-4 py-2 text-sm font-medium text-brand-ink transition-colors hover:bg-signal-hover"
         >
           查看詳情 · {product.price}
         </Link>
@@ -99,7 +99,7 @@ export default async function BlogPost({
                 <Link
                   key={related.slug}
                   href={`/blog/${related.slug}`}
-                  className="block rounded-sm border border-line bg-surface p-4 hover:border-signal transition-colors"
+                  className="block rounded-sm border border-line bg-surface p-4 transition-colors hover:border-signal-hover"
                 >
                   <p className="font-data text-xs uppercase tracking-wide text-text-dim mb-1">
                     {related.category}

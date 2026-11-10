@@ -49,7 +49,12 @@ export default function EmailCapture({
         <div>
           <p style={styles.title}>🎉 送出成功！</p>
           <p style={styles.text}>你的 7 天高蛋白菜單在這裡：</p>
-          <a href="/downloads/7day-menu.pdf" download style={styles.button}>
+          <a
+            href="/downloads/7day-menu.pdf"
+            download
+            className="email-capture-cta"
+            style={styles.button}
+          >
             下載 PDF
           </a>
         </div>
@@ -71,6 +76,7 @@ export default function EmailCapture({
             <button
               type="submit"
               disabled={status === "loading"}
+              className="email-capture-cta"
               style={styles.button}
             >
               {status === "loading" ? "送出中…" : "免費領取"}
@@ -114,7 +120,6 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "12px 20px",
     borderRadius: 10,
     border: "none",
-    background: "var(--af-signal)",
     color: "#15181C",
     fontWeight: 700,
     fontSize: 16,

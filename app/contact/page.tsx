@@ -28,7 +28,7 @@ export default function ContactPage() {
           <h2 className="font-display text-lg font-bold mb-3">Email</h2>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="font-data text-signal underline underline-offset-2"
+            className="font-data text-signal underline underline-offset-2 transition-colors hover:text-signal-hover"
           >
             {CONTACT_EMAIL}
           </a>
@@ -42,7 +42,7 @@ export default function ContactPage() {
               href="https://www.threads.net/@axionfit_tw"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-signal underline underline-offset-2"
+              className="text-signal underline underline-offset-2 transition-colors hover:text-signal-hover"
             >
               @axionfit_tw
             </a>

@@ -8,10 +8,12 @@
   --af-line: #33393c;        /* hairline */
   --af-text: #eeeee6;        /* off-white body text */
   --af-text-dim: #9aa0a0;    /* secondary text */
-  --af-protein: #ff8a3d;     /* amber — protein */
+  --af-protein: #C6FF3D;     /* neon green — protein */
   --af-carb: #5ec8d8;        /* steel cyan — carbs */
   --af-fat: #d8c15e;         /* muted gold — fat */
-  --af-signal: #ff8a3d;      /* primary accent = protein amber */
+  --af-signal: #C6FF3D;      /* primary brand accent */
+  --af-signal-hover: #B0E62E;
+  --af-brand-ink: #15181C;
 }
 
 @theme inline {
@@ -25,6 +27,8 @@
   --color-carb: var(--af-carb);
   --color-fat: var(--af-fat);
   --color-signal: var(--af-signal);
+  --color-signal-hover: var(--af-signal-hover);
+  --color-brand-ink: var(--af-brand-ink);
   --font-display: "Noto Sans TC", sans-serif;
   --font-body: "Noto Sans TC", sans-serif;
   --font-data: "JetBrains Mono", monospace;
@@ -52,6 +56,14 @@ h1, h2, h3, .font-display {
 .font-data {
   font-family: "JetBrains Mono", monospace;
   font-variant-numeric: tabular-nums;
+}
+
+.email-capture-cta {
+  background-color: var(--af-signal);
+  transition: background-color 160ms ease;
+}
+.email-capture-cta:hover {
+  background-color: var(--af-signal-hover);
 }
 
 /* macro bar — the recurring signature motif: a segmented P/C/F bar
@@ -82,7 +94,7 @@ h1, h2, h3, .font-display {
 
 ::selection {
   background: var(--af-signal);
-  color: #15181a;
+  color: var(--af-brand-ink);
 }
 
 :focus-visible {

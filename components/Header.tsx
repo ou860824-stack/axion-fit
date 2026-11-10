@@ -20,7 +20,7 @@ export default function Header() {
         </Link>
         <button
           type="button"
-          className="flex size-10 items-center justify-center rounded-sm border border-line text-text transition-colors hover:border-signal md:hidden"
+          className="flex size-10 items-center justify-center rounded-sm border border-line text-text transition-colors hover:border-signal-hover md:hidden"
           aria-label={isMenuOpen ? "關閉導覽選單" : "開啟導覽選單"}
           aria-expanded={isMenuOpen}
           aria-controls="primary-navigation"
@@ -48,35 +48,35 @@ export default function Header() {
         >
           <Link
             href="/blog"
-            className="whitespace-nowrap py-3 transition-colors hover:text-text md:py-0"
+            className="whitespace-nowrap py-3 transition-colors hover:text-signal-hover md:py-0"
             onClick={() => setIsMenuOpen(false)}
           >
             文章
           </Link>
           <Link
             href="/calculator"
-            className="whitespace-nowrap py-3 transition-colors hover:text-text md:py-0"
+            className="whitespace-nowrap py-3 transition-colors hover:text-signal-hover md:py-0"
             onClick={() => setIsMenuOpen(false)}
           >
             計算機
           </Link>
           <Link
             href="/products"
-            className="whitespace-nowrap py-3 transition-colors hover:text-text md:py-0"
+            className="whitespace-nowrap py-3 transition-colors hover:text-signal-hover md:py-0"
             onClick={() => setIsMenuOpen(false)}
           >
             工具
           </Link>
           <Link
             href="/about"
-            className="whitespace-nowrap py-3 transition-colors hover:text-text md:py-0"
+            className="whitespace-nowrap py-3 transition-colors hover:text-signal-hover md:py-0"
             onClick={() => setIsMenuOpen(false)}
           >
             關於
           </Link>
           <Link
             href="/products/macro-tracker"
-            className="mt-2 inline-flex w-full justify-center whitespace-nowrap rounded-sm bg-signal px-3 py-2 text-bg normal-case tracking-normal transition-opacity hover:opacity-90 md:mt-0 md:w-auto md:py-1.5"
+            className="mt-2 inline-flex w-full justify-center whitespace-nowrap rounded-sm bg-signal px-3 py-2 text-brand-ink normal-case tracking-normal transition-colors hover:bg-signal-hover md:mt-0 md:w-auto md:py-1.5"
             onClick={() => setIsMenuOpen(false)}
           >
             立即取得

@@ -187,7 +187,7 @@ export default function MacroCalculator() {
 
         <button
           type="submit"
-          className="mt-6 w-full rounded-sm bg-signal px-5 py-3 font-medium text-bg transition-opacity hover:opacity-90 sm:w-auto"
+          className="mt-6 w-full rounded-sm bg-signal px-5 py-3 font-medium text-brand-ink transition-colors hover:bg-signal-hover sm:w-auto"
         >
           計算我的目標
         </button>

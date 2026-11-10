@@ -9,9 +9,9 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} AXION FIT — 用數據吃出身材</p>
           <p>
             @axionfit_tw ·{" "}
-            <a href="/about" className="hover:text-signal transition-colors">關於我們</a> ·{" "}
-            <a href="/contact" className="hover:text-signal transition-colors">聯絡我們</a> ·{" "}
-            <a href="/privacy" className="hover:text-signal transition-colors">隱私權政策</a>
+            <a href="/about" className="hover:text-signal-hover transition-colors">關於我們</a> ·{" "}
+            <a href="/contact" className="hover:text-signal-hover transition-colors">聯絡我們</a> ·{" "}
+            <a href="/privacy" className="hover:text-signal-hover transition-colors">隱私權政策</a>
           </p>
         </div>
       </div>

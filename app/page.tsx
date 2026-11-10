@@ -29,13 +29,13 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/products/macro-tracker"
-                className="rounded-sm bg-signal px-5 py-2.5 font-medium text-bg hover:opacity-90 transition-opacity"
+                className="rounded-sm bg-signal px-5 py-2.5 font-medium text-brand-ink transition-colors hover:bg-signal-hover"
               >
                 取得追蹤表 · {product.price}
               </Link>
               <Link
                 href="/blog"
-                className="rounded-sm border border-line px-5 py-2.5 font-medium hover:border-signal/60 transition-colors"
+                className="rounded-sm border border-line px-5 py-2.5 font-medium transition-colors hover:border-signal-hover"
               >
                 先看免費文章
               </Link>
@@ -74,7 +74,7 @@ export default function Home() {
       <section className="mx-auto max-w-5xl px-5 pb-20">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="font-display text-2xl font-bold">最新文章</h2>
-          <Link href="/blog" className="font-data text-xs uppercase tracking-wide text-text-dim hover:text-signal transition-colors">
+          <Link href="/blog" className="font-data text-xs uppercase tracking-wide text-text-dim transition-colors hover:text-signal-hover">
             看全部 →
           </Link>
         </div>
@@ -103,7 +103,7 @@ export default function Home() {
           </p>
           <Link
             href="/products/macro-tracker"
-            className="mt-6 inline-block rounded-sm bg-signal px-5 py-2.5 font-medium text-bg hover:opacity-90 transition-opacity"
+            className="mt-6 inline-block rounded-sm bg-signal px-5 py-2.5 font-medium text-brand-ink transition-colors hover:bg-signal-hover"
           >
             查看詳情 · {product.price}
           </Link>

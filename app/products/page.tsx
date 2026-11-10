@@ -24,9 +24,9 @@ export default function ProductsIndex() {
           <Link
             key={product.slug}
             href={`/products/${product.slug}`}
-            className="group block rounded-sm border border-line bg-surface p-6 transition-colors hover:border-signal/60"
+            className="group block rounded-sm border border-line bg-surface p-6 transition-colors hover:border-signal-hover"
           >
-            <h2 className="font-display text-xl font-bold group-hover:text-signal transition-colors">
+            <h2 className="font-display text-xl font-bold group-hover:text-signal-hover transition-colors">
               {product.name}
             </h2>
             <p className="mt-2 text-sm text-text-dim">{product.tagline}</p>

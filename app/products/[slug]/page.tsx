@@ -35,7 +35,7 @@ export default async function ProductDetail({
     <div className="mx-auto max-w-2xl px-5 py-16">
       <Link
         href="/products"
-        className="font-data text-xs uppercase tracking-wide text-text-dim hover:text-signal transition-colors"
+        className="font-data text-xs uppercase tracking-wide text-text-dim transition-colors hover:text-signal-hover"
       >
         ← 回工具列表
       </Link>
@@ -65,7 +65,7 @@ export default async function ProductDetail({
         href={product.buyUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-10 inline-block rounded-sm bg-signal px-6 py-3 font-medium text-bg hover:opacity-90 transition-opacity"
+        className="mt-10 inline-block rounded-sm bg-signal px-6 py-3 font-medium text-brand-ink transition-colors hover:bg-signal-hover"
       >
         前往 Gumroad 購買 · {product.price}
       </a>

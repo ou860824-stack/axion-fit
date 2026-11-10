@@ -49,7 +49,7 @@ export default function PrivacyPolicy() {
               href="https://adssettings.google.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-signal underline underline-offset-2"
+              className="text-signal underline underline-offset-2 transition-colors hover:text-signal-hover"
             >
               Google 廣告設定
             </a>{" "}
@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
               href="https://www.aboutads.info/choices/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-signal underline underline-offset-2"
+              className="text-signal underline underline-offset-2 transition-colors hover:text-signal-hover"
             >
               www.aboutads.info
             </a>{" "}

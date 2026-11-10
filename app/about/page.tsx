@@ -39,7 +39,10 @@ export default function AboutPage() {
           <h2 className="font-display text-xl font-bold mb-3">聯絡我們</h2>
           <p>
             有任何問題、合作邀約或內容勘誤,歡迎透過{" "}
-            <Link href="/contact" className="text-signal underline underline-offset-2">
+            <Link
+              href="/contact"
+              className="text-signal underline underline-offset-2 transition-colors hover:text-signal-hover"
+            >
               聯絡頁面
             </Link>{" "}
             與我們聯繫。
