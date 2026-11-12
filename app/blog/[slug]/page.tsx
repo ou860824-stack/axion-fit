@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import MacroBar from "@/components/MacroBar";
@@ -35,6 +36,9 @@ export default async function BlogPost({
   if (!post) notFound();
 
   const product = products[0];
+  const articleBody =
+    post.sections ??
+    post.body.map((text) => ({ type: "paragraph" as const, text }));
 
   return (
     <article className="mx-auto max-w-2xl px-5 py-16">
@@ -57,12 +61,67 @@ export default async function BlogPost({
         {post.title}
       </h1>
 
+      {post.image && (
+        <div className="relative mt-6 aspect-video overflow-hidden rounded-sm">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 672px"
+            className="object-cover"
+          />
+        </div>
+      )}
+
       <MacroBar macro={post.macro} labeled className="mt-6" />
 
       <div className="mt-10 space-y-5 leading-relaxed text-text">
-        {post.body.map((paragraph, i) => (
+        {articleBody.map((paragraph, i) => (
           <Fragment key={i}>
-            <p>{paragraph}</p>
+            {paragraph.type === "heading" ? (
+              <h2 className="font-display pt-4 text-xl font-bold text-text">
+                {paragraph.text}
+              </h2>
+            ) : paragraph.type === "paragraph" ? (
+              <p>{paragraph.text}</p>
+            ) : paragraph.type === "list" ? (
+              <ul className="list-disc space-y-2 pl-5">
+                {paragraph.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>{item}</li>
+                ))}
+              </ul>
+            ) : (
+              <div className="overflow-x-auto rounded-sm border border-line bg-surface p-4">
+                <table className="min-w-full border-collapse text-left text-sm">
+                  <thead>
+                    <tr>
+                      {paragraph.rows[0]?.map((cell, cellIndex) => (
+                        <th
+                          key={cellIndex}
+                          className="border-b border-line px-3 py-2 font-semibold text-signal"
+                        >
+                          {cell}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {paragraph.rows.slice(1).map((row, rowIndex) => (
+                      <tr key={rowIndex}>
+                        {row.map((cell, cellIndex) => (
+                          <td
+                            key={cellIndex}
+                            className="border-b border-line px-3 py-2 align-top text-text-dim"
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
             {i === 1 && <AdSlot label="文中" />}
           </Fragment>
         ))}

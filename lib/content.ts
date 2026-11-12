@@ -1,4 +1,12 @@
+import { articleAdditions, migratedPosts } from "./migrated-content";
+
 export type MacroSplit = { p: number; c: number; f: number }; // % of calories
+
+export type ArticleBlock =
+  | { type: "heading"; text: string }
+  | { type: "paragraph"; text: string }
+  | { type: "list"; items: string[] }
+  | { type: "table"; rows: string[][] };
 
 export type Post = {
   slug: string;
@@ -9,6 +17,8 @@ export type Post = {
   readMins: number;
   macro: MacroSplit;
   body: string[]; // paragraphs
+  sections?: ArticleBlock[];
+  image?: string;
   related?: string[]; // related post slugs
 };
 
@@ -23,7 +33,7 @@ export type Product = {
   macro: MacroSplit;
 };
 
-export const posts: Post[] = [
+const originalPosts: Post[] = [
   {
     slug: "5-high-protein-taiwan-convenience-store",
     title: "超商就能買到的 5 種高蛋白食物,便宜又方便",
@@ -123,7 +133,7 @@ export const posts: Post[] = [
       "4. 黑豆——半杯煮熟黑豆約 7-8 克纖維,拿來取代部分白飯,同一餐的飽足感差異很明顯。可以一次煮一大鍋,分裝冷凍,每餐取一小份加進飯裡,不用天天花時間料理。",
       "5. 蘋果連皮吃——一顆中型蘋果約 4 克纖維,其中很大一部分在果皮,削皮吃等於少掉不少纖維。連皮吃時建議洗乾淨,用流動的水搭配軟刷清洗表面。",
       "把這幾樣輪流加進三餐,不用刻意計算,飽足感自然會比同樣熱量、但纖維量低的組合來得持久。舉例:早餐優格加奇亞籽與蘋果、午餐白飯換成一半黑豆飯加花椰菜、下午點心吃一份毛豆,一天下來就能多出 20 克以上的纖維。",
-      "增加纖維要循序漸進,一次從 10 克暴增到 35 克,可能會出現脹氣或腹瀉。建議每週增加 5 克左右,同時每天多喝 500-1,000ml 的水,讓腸道有時間適應。有腸胃疾病的人,調整飲食前建議先諮詢醫師或營養師。",
+      "增加纖維要循序漸進,一次從 10 克暴增到 35 克,可能會出現脹氣或腹瀉。建議每週增加 5 克左右,同時每天多喝 500-1,000ml 的水,讓腸道有時間適應。有腸胃疾病的人,調整飲食前建議先諮詢醫師。",
     ],
     related: ["lunch-box-fat-loss-guide", "fat-loss-plateau-reasons", "3-fat-loss-myths-beginners-fall-for"],
   },
@@ -267,7 +277,7 @@ export const posts: Post[] = [
       "誤區二:「斷食會燃燒肌肉,越餓身體吃自己」。只要一天的總熱量與蛋白質攝取有達標,斷食本身並不會額外增加肌肉流失的風險,重點還是回到每日總熱量赤字有沒有控制得宜。進食窗口內要把蛋白質吃夠,建議分成 2-3 餐,每餐 25-40 克,比較容易達標。",
       "誤區三:「斷食比較好減脂,效果比一般熱量赤字更好」。多數研究顯示,只要總熱量與巨量營養素相同,斷食組跟正常三餐組的減脂效果並沒有顯著差異,斷食真正的優勢是「幫某些人更容易控制總熱量」,而不是代謝上有額外加成。",
       "誤區四:「斷食結束後可以放開吃」。這是最常讓斷食失敗的原因。很多人整個早上忍著不吃,到了進食窗口就一口氣吃下 1,500 大卡的一餐,加上手搖飲與點心,一天總熱量反而超過原本的量。斷食只是改變吃的時間,進食窗口內仍然要照目標熱量吃。",
-      "適合斷食的情況:平常工作忙、早餐容易隨便吃或懶得吃、喜歡把熱量集中在晚餐吃到飽足感的人。不適合的情況:需要早上訓練且訓練前需要進食才有力氣的人、有血糖問題或病史需要少量多餐的人、懷孕或哺乳中的人,以及有飲食失調病史的人,這類情況建議先諮詢醫師或營養師。",
+      "適合斷食的情況:平常工作忙、早餐容易隨便吃或懶得吃、喜歡把熱量集中在晚餐吃到飽足感的人。不適合的情況:需要早上訓練且訓練前需要進食才有力氣的人、有血糖問題或病史需要少量多餐的人、懷孕或哺乳中的人,以及有飲食失調病史的人,這類情況建議先諮詢醫師。",
       "如果想嘗試,建議從 12:12 開始,慢慢拉長到 14:10、16:8,不用一開始就硬上。第一週先觀察自己的狀況:早上會不會頭暈、注意力有沒有明顯下降、晚上會不會暴食。出現這些情況就把斷食時間縮短一點,不要硬撐。同時把進食窗口內的熱量跟巨量營養素照樣算好,斷食只是換了個吃飯的時間安排,不是省略計算這一步。",
       "最後要記得,最好的飲食方式是你能長期執行的那一種。如果斷食讓你生活更輕鬆、吃得更穩定,就繼續用;如果它讓你焦慮、常常失控暴食,那就換回三餐制,效果不會比較差。",
     ],
@@ -335,6 +345,34 @@ export const posts: Post[] = [
     related: ["how-to-calculate-your-macros", "macro-counting-myths", "3-fat-loss-myths-beginners-fall-for"],
   },
 ];
+
+export const posts: Post[] = [
+  ...originalPosts.map((post) => {
+    const addition = articleAdditions[post.slug];
+    return addition
+      ? {
+          ...post,
+          image: addition.image,
+          body: [...post.body, ...addition.sections.map(articleBlockToText)],
+          sections: [
+            ...post.body.map((text) => ({ type: "paragraph" as const, text })),
+            ...addition.sections,
+          ],
+        }
+      : post;
+  }),
+  ...migratedPosts,
+];
+
+function articleBlockToText(block: ArticleBlock): string {
+  if (block.type === "table") {
+    return block.rows.map((row) => row.join("｜")).join("；");
+  }
+  if (block.type === "list") {
+    return block.items.join("；");
+  }
+  return block.text;
+}
 
 export const products: Product[] = [
   {
