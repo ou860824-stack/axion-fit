@@ -8,13 +8,13 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/80 bg-bg/90 backdrop-blur">
-      <div className="relative mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
+      <div className="relative mx-auto flex min-h-[72px] max-w-5xl items-center justify-between px-5 py-3">
         <Link
           href="/"
           className="group flex items-center gap-2 whitespace-nowrap"
           onClick={() => setIsMenuOpen(false)}
         >
-          <span className="font-display whitespace-nowrap text-xl font-black tracking-tight">
+          <span className="site-logo font-display whitespace-nowrap text-[30px] leading-none font-black md:text-[34px]">
             AXION<span className="text-signal">FIT</span>
           </span>
         </Link>

@@ -58,6 +58,10 @@ h1, h2, h3, .font-display {
   font-variant-numeric: tabular-nums;
 }
 
+.site-logo {
+  letter-spacing: 2px;
+}
+
 .email-capture-cta {
   background-color: var(--af-signal);
   transition: background-color 160ms ease;
